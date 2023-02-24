@@ -1,0 +1,10 @@
+<h1>To-Do Lab</h1>
+<h3>To-Do List:</h3>
+
+<div *ngFor="let t of todos;index as i">
+    <h2 [ngStyle]="{'text-decoration': t.completed ? 'line-through' : ''}"><button *ngIf="t.completed == false" (click)="completedToDo(i)">Complete Task</button>{{t.task}}</h2>
+</div>
+
+<p>Please enter a new task:</p>
+<input type="text" [(ngModel)]="newToDo.task"/>
+<button (click)="addToDo()">Add Task</button>
